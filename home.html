@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>KML Comuni Sample</title>
+    <style>
+      html, body {
+        height: 370px;
+        padding: 0;
+        margin: 0;
+        }
+      #mapdiv {
+       height: 500px;
+       width:  500px;
+       overflow: hidden;
+       float: left;
+       border: thin solid #333;
+       }
+     
+    </style>
+  </head>
+  <body>
+    <div id="mapdiv"></div>
+    <div class="google-maps">
+</div>
+    <script>
+      var mapi;
+      var src = "https://mega.nz/#!DoJE1aSC";
+    function initMap() {
+      //CREA UNA MAPPA CENTRATA SUL DUOMO DI MILANO,si vede milano
+    mapi = new google.maps.Map(document.getElementById('mapdiv'), {
+      center: new google.maps.LatLng(45.464211, 9.191383),
+      zoom: 10,
+      mapTypeId: 'roadmap'
+    });
+    
+    //CREA UN NUOVO LAYER
+    var kmlLayer = new google.maps.KmlLayer(src, {map: mapi});
+      
+
+}
+
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKOkgC6IwTdUXg7RlJogNfexI9pv4K-cI&callback=initMap">
+    </script>
+  </body>
+</html>

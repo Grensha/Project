@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>KML Click Capture Sample</title>
+    <style>
+      html, body {
+        height: 370px;
+        padding: 0;
+        margin: 0;
+        }
+      #mapdiv {
+       height: 500px;
+       width:  500px;
+       overflow: hidden;
+       float: left;
+       border: thin solid #333;
+       }
+     
+    </style>
+  </head>
+  <body>
+    <div id="mapdiv"></div>
+    <div class="google-maps">
+</div>
+
+   <script type="text/javascript" charset="utf-8">
+  function initMap() {
+  var map = new google.maps.Map(document.getElementById('mapdiv'), {
+    zoom: 11,
+    center: {lat: 41.876, lng: -87.624}
+  });
+
+  var ctaLayer = new google.maps.KmlLayer({
+    url: 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml',
+    map: map
+  });
+}
+</script>
+    
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKOkgC6IwTdUXg7RlJogNfexI9pv4K-cI&callback=initMap">
+    </script>
+  </body>
+</html>
